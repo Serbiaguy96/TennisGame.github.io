@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tennis game</title>
+</head>
+<canvas id="gameCanvas" width="800" height="600">
+	
+</canvas>
+<script>
+
+var canvas;
+var canvasContext;
+
+var lineLength = 600 / 9;
+var lineWidth = 2;
+
+window.onload = function() {
+	console.log("Hello World!");
+	canvas = document.getElementById('gameCanvas');
+	canvasContext = canvas.getContext('2d');
+	canvasContext.fillStyle = 'black';
+	canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+	canvasContext.fillStyle = 'white';
+
+	var countLen = 0;
+
+	for(var i = 0; i < 5; i++){
+		canvasContext.fillRect(canvas.width/2 - 1, countLen, lineWidth, lineLength );
+		countLen += lineLength * 2;
+	}
+}
+
+</script>
+</html>
